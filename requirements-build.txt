@@ -1,0 +1,4 @@
+# Build-time dependencies for the one-file executables.
+# PyInstaller is pinned; it can bundle CPython 3.13 and Tkinter.
+pyinstaller==6.22.3
+pillow>=10

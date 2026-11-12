@@ -1,0 +1,43 @@
+{
+  "ManufacturerProductNumber": "LM324N",
+  "Manufacturer": {"Name": "Texas Instruments"},
+  "Description": {
+    "ProductDescription": "IC OPAMP GP 4 CIRCUIT 14DIP",
+    "DetailedDescription": "General Purpose Amplifier 4 Circuit 14-PDIP"
+  },
+  "ProductStatus": {"Status": "Active"},
+  "QuantityAvailable": 2500,
+  "ProductVariations": [
+    {
+      "DigiKeyProductNumber": "LM324N-ND",
+      "StandardPricing": [
+        {"BreakQuantity": 1, "UnitPrice": 0.45},
+        {"BreakQuantity": 10, "UnitPrice": 0.39}
+      ]
+    }
+  ],
+  "Parameters": [
+    {"ParameterId": 10, "ParameterText": "Package / Case", "ValueText": "14-DIP (0.300\", 7.62mm)", "ParameterType": "String"},
+    {"ParameterId": 20, "ParameterText": "Mounting Type", "ValueText": "Through Hole", "ParameterType": "String"},
+    {"ParameterId": 30, "ParameterText": "Number of Circuits", "ValueText": "4", "ParameterType": "String"},
+    {"ParameterId": 40, "ParameterText": "Operating Temperature", "ValueText": "-40°C ~ 85°C", "ParameterType": "String"}
+  ],
+  "Category": {
+    "Name": "Integrated Circuits (ICs)",
+    "ChildCategories": [
+      {
+        "Name": "Linear",
+        "ChildCategories": [
+          {
+            "Name": "Amplifiers",
+            "ChildCategories": [
+              {"Name": "Instrumentation", "ChildCategories": []}
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "ProductUrl": "https://www.digikey.com/en/products/detail/lm324n",
+  "DatasheetUrl": "//www.ti.com/lit/ds/symlink/lm324.pdf"
+}

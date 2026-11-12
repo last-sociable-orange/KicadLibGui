@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kicad-lib-gen"
+version = "1.0.0"
+description = "DigiKey to KiCad components.db GUI and CLI"
+readme = "README-GUI.md"
+requires-python = ">=3.13"
+license = { text = "MIT" }
+authors = [{ name = "KiCad LibGen contributors" }]
+dependencies = [
+    "requests>=2.32",
+    "prompt-toolkit>=3.0.52",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6", "pillow>=10"]
+build = ["pyinstaller==6.22.3", "pillow>=10"]
+
+[project.scripts]
+kicad-lib-gen = "kicad_cip:main"
+
+[project.gui-scripts]
+kicad-lib-gen-gui = "gui_main:main"
+
+[tool.setuptools]
+py-modules = ["kicad_cip", "digikey_auth", "digikey_search", "colors", "gui_main", "version"]
+
+[tool.setuptools.packages.find]
+include = ["kicad_core*", "services*", "gui*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["error::DeprecationWarning:kicad_core.*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+extend-exclude = [
+    ".venv",
+    ".uv-cache",
+    ".uv-python",
+    ".tmp_*",
+    ".upstream",
+    "dist",
+    "build/kicad_lib_gen_gui",
+    "docs/make_mockup.py",
+    "tests/.tmp",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF"]
+ignore = [
+    "E501",   # long lines are handled by the formatter
+    "RUF046", # explicit int() is defensive when reading JSON token files
+    "SIM102", # nested ifs are often clearer in Tk layout code
+    "SIM105", # try/except/pass is explicit for best-effort Tk cleanup
+    "RUF005", # list concatenation is clearer for combobox values
+    "RUF001", # the UI intentionally uses glyphs such as the info symbol
+]
+
+[tool.ruff.lint.per-file-ignores]
+"gui/*" = ["BLE001", "S110"]
+"gui_main.py" = ["BLE001", "S110"]
+"digikey_auth.py" = ["SIM115"]
+"kicad_core/parser.py" = ["TRY004"]
+"tests/*" = ["B017"]

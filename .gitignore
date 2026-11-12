@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.uv-cache/
+.uv-python/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# PyInstaller
+dist/
+build/kicad_lib_gen_gui/
+build/__pycache__/
+*.manifest
+
+# Local test / demo artifacts
+tests/.tmp/
+.tmp_demo/
+.tmp_test*/
+.tmp_pytest/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.log
+
+# Tokens and secrets
+.token
+token.json
+*.token
+.env
+
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Workspace scratch from earlier investigations (not part of the project)
+.tmp_asar_extract*/
+.tmp_*.py
+.tmp_*.txt
+.upstream/
